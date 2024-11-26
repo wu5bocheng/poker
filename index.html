@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Texas Hold'em Chip Calculator</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <h1>Texas Hold'em Poker Chip Calculator</h1>
+
+    <!-- Connection Setup Section -->
+    <div id="setup">
+      <h2>Connect to Game</h2>
+      <label for="server-address">Server Address:</label>
+      <input type="text" id="server-address" placeholder="e.g., 192.168.1.1" />
+      <br />
+      <label for="server-port">Port:</label>
+      <input type="number" id="server-port" value="8080" />
+      <br />
+      <label for="client-name">Your Name:</label>
+      <input type="text" id="client-name" placeholder="Enter your name" />
+      <br />
+      <button id="connect">Connect</button>
+    </div>
+
+    <!-- Main Game UI -->
+    <div id="app" style="display: none">
+      <!-- Player Info Section -->
+      <div id="player-info">
+        <h2>Your Info</h2>
+        <div id="turn-indicator">Waiting for the first player to act...</div>
+        <p><strong>Chips Left:</strong> <span id="chips-left">0</span></p>
+        <p><strong>Chips in Pot:</strong> <span id="chips-in-pot">0</span></p>
+        <p><strong>Total Pot:</strong> <span id="total-pot">0</span></p>
+        <p><strong>Current Bet:</strong> <span id="current-bet">0</span></p>
+        <!-- Total Pot added here -->
+      </div>
+
+      <!-- Player Actions -->
+      <div id="actions">
+        <h2>Actions</h2>
+        <label for="chip-amount">Raise Amount:</label>
+        <input type="number" id="chip-amount" placeholder="Enter amount" />
+        <button id="raise">Raise</button>
+        <button id="follow">Follow</button>
+        <button id="fold">Fold</button>
+      </div>
+
+      <!-- Admin Controls -->
+      <div id="admin-controls" style="display: none">
+        <h2>Admin Controls</h2>
+        <div id="settings">
+          <h3>Game Settings</h3>
+          <label for="initial-chip-count">Initial Chip Count:</label>
+          <input type="number" id="initial-chip-count" value="1000" />
+          <br />
+          <label for="default-raise-amount">Default Raise Amount:</label>
+          <input type="number" id="default-raise-amount" value="100" />
+          <br />
+          <button id="update-settings">Update Settings</button>
+        </div>
+
+        <!-- Admin View of Players -->
+        <div id="player-management">
+          <h3>Player Management</h3>
+          <table id="admin-table" border="1">
+            <thead>
+              <tr>
+                <th>Player Name</th>
+                <th>Chips Left</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody>
+              <!-- Dynamic rows will be added here by JavaScript -->
+            </tbody>
+          </table>
+        </div>
+
+        <!-- Winner Selection -->
+        <div id="winner-selection">
+          <h3>Select Winner(s):</h3>
+          <div id="player-buttons-container">
+            <!-- Dynamic winner buttons will be added here by JavaScript -->
+          </div>
+          <button id="set-winner">Set Winner</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- JavaScript -->
+    <script src="script.js"></script>
+  </body>
+</html>

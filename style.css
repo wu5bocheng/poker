@@ -1,0 +1,104 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #282c34;
+    color: white;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+#app {
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 20px;
+    background: #444;
+    border-radius: 10px;
+}
+
+#actions button,
+#update {
+    padding: 10px 20px;
+    font-size: 16px;
+    margin: 10px;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+}
+
+#actions button:hover,
+#update:hover {
+    background: #555;
+}
+
+#admin-controls {
+    margin-top: 20px;
+}
+
+textarea {
+    width: 100%;
+    resize: none;
+    background: #333;
+    color: white;
+    border: 1px solid #555;
+    padding: 10px;
+}
+
+.player-status {
+    padding: 10px 20px;
+    font-size: 16px;
+    margin: 10px;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+}
+
+/* Highlight for the selected player (e.g., selected winner) */
+.selected {
+    background-color: #007bff;
+    /* Bright blue */
+    color: white;
+    font-weight: bold;
+    border: 2px solid #0056b3;
+    transition: background-color 0.3s, border 0.3s;
+}
+
+.selected:hover {
+    background-color: #0056b3;
+}
+
+/* Style for folded players */
+.folded {
+    background-color: #555;
+    /* Dim gray */
+    color: #999;
+    /* Light gray */
+    font-style: italic;
+    text-decoration: line-through;
+    border: 1px solid #777;
+}
+
+/* Highlight for the current player */
+.current-turn {
+    background-color: #28a745;
+    /* Bright green */
+    color: white;
+    font-weight: bold;
+    border: 2px solid #1e7e34;
+    animation: pulse 1.5s infinite;
+    /* Add a subtle animation */
+}
+
+/* Pulse animation for the current player */
+@keyframes pulse {
+    0% {
+        box-shadow: 0 0 10px #28a745;
+    }
+
+    50% {
+        box-shadow: 0 0 20px #28a745;
+    }
+
+    100% {
+        box-shadow: 0 0 10px #28a745;
+    }
+}
